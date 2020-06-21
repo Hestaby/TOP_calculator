@@ -1,7 +1,7 @@
 html {
     color: RGB(73, 251, 53);
     height: 100%;
-    font-size: 64px;
+    font-size: 32px;
 }
 body {
     display: grid;
@@ -21,7 +21,7 @@ body {
     grid-template-areas: 
     "disp disp disp disp"
     "func func func func"
-    "num num num equals"
+    "num num num clear"
     "num num num equals"
     "num num num equals"
     "num num num equals";
@@ -80,6 +80,12 @@ body {
     grid-area: disp;
     border: solid 2px;
     border-color: RGB(73, 251, 53);
-    font-size: 64px;
+    font-size: 32px;
+}
+.clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: clear;
 }
 

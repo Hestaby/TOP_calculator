@@ -24,13 +24,47 @@ function sum () {
 	}
 	return toReturn;
 }
-let operands = [0,0];
+let operator = ``;
 function operate(){
-    let operation = arguments[0];
-    if (operation == `+`){
-
-    }
+let operands = dispText.split(/[+\-*\/]/);
+	if (operator == `+`)
+		return parseFloat(operands[0]) + parseFloat(operands[1]);
+	if (operator == `-`)
+		return parseFloat(operands[0]) - parseFloat(operands[1]);
+	if (operator == `*`)
+		return parseFloat(operands[0]) * parseFloat(operands[1]);
+	if (operator == `/`)
+		return parseFloat(operands[0]) / parseFloat(operands[1]);
 }
+let dispText = `0`;
 const disp = document.querySelector(`.display`);
-disp.textContent = "0";
-const buttons = document.querySelectorAll()
+disp.textContent = `${dispText}`;
+const funcs = document.querySelectorAll(`.funcs`);
+
+funcs.forEach(element => {
+	element.addEventListener(`click`, event => {
+		operator = element.textContent;
+		dispText += `${element.textContent}`
+		disp.textContent = dispText;
+	})		
+});
+const nums = document.querySelectorAll(`.nums`);
+nums.forEach(element => {
+	element.addEventListener(`click`, event => {
+		if (dispText != 0)
+			dispText += `${element.textContent}`;
+		else
+			dispText = `${element.textContent}`;
+		disp.textContent = dispText;
+	});
+});
+const clear = document.querySelector(`.clear`);
+clear.addEventListener(`click`, event => {
+	dispText = `0`;
+	disp.textContent = dispText;
+});
+const equals = document.querySelector(`.equals`);
+equals.addEventListener(`click`, event => {
+	dispText = operate();
+	disp.textContent = dispText;
+});
