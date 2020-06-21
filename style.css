@@ -1,0 +1,85 @@
+html {
+    color: RGB(73, 251, 53);
+    height: 100%;
+    font-size: 64px;
+}
+body {
+    display: grid;
+    align-items: center;
+    height: 100%;
+}
+.wrapper {
+    margin: auto;
+    background-color:black;
+    width: 300px;
+    height: 500px;
+    display: grid;
+    border: solid 3px;
+    border-color: RGB(73, 251, 53);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "disp disp disp disp"
+    "func func func func"
+    "num num num equals"
+    "num num num equals"
+    "num num num equals"
+    "num num num equals";
+}
+.num-buttons {
+    grid-area: num;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.nums {
+    display: grid;
+    align-items: center;
+    align-self: center;
+    border: solid 2px;
+    border-color: RGB(73, 251, 53);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+#zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.func-buttons {
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-area: func;
+}
+.funcs {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    border: solid 2px;
+    border-color: RGB(73, 251, 53);
+    text-align: center;
+    
+}
+.equals {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    grid-area: equals;
+    border: solid 2px;
+    border-color: RGB(73, 251, 53);
+}
+.display {
+    text-align: right;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-area: disp;
+    border: solid 2px;
+    border-color: RGB(73, 251, 53);
+    font-size: 64px;
+}
+
