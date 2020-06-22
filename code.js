@@ -43,6 +43,8 @@ const funcs = document.querySelectorAll(`.funcs`);
 
 funcs.forEach(element => {
 	element.addEventListener(`click`, event => {
+		if (operator != '')
+			dispText = operate();
 		operator = element.textContent;
 		dispText += `${element.textContent}`
 		disp.textContent = dispText;
@@ -62,6 +64,7 @@ const clear = document.querySelector(`.clear`);
 clear.addEventListener(`click`, event => {
 	dispText = `0`;
 	disp.textContent = dispText;
+	operator = '';
 });
 const equals = document.querySelector(`.equals`);
 equals.addEventListener(`click`, event => {
